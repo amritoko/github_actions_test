@@ -2,3 +2,6 @@ mysecret.json
 matrix.yml
 actions.yml
 env.yml
+simple.yml
+context.yml
+actions.yml
