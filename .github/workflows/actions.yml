@@ -1,8 +1,14 @@
 name: Actions Workflow
 
 on:
-  repository_dispatch:
-    types: [build]
+  push:
+    branches-ignore:
+      - master
+      - 'feature/*'
+      - 'feature/**'
+      - '!feature/featC'
+  # repository_dispatch:
+  #   types: [build]
   # schedule:
   #   - cron: "0/10 * * * *"
   workflow_dispatch: 
@@ -13,8 +19,8 @@ jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
-      - name: Payload
-        run: echo ${{ github.event.client_payload.env }}
+      # - name: Payload
+      #   run: echo ${{ github.event.client_payload.env }}
       - name: List Files
         run: |
           pwd
